@@ -5,6 +5,8 @@
 
   <appender name="info-logger" class="ch.qos.logback.core.rolling.RollingFileAppender">
     <file>${home}info.log</file>
+    <append>false</append>
+    <immediateFlush>false</immediateFlush>
     <filter class="ch.qos.logback.classic.filter.LevelFilter">
       <level>INFO</level>
       <onMatch>ACCEPT</onMatch>
