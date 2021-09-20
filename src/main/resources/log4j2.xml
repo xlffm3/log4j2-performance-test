@@ -10,7 +10,7 @@
 
   <Appenders>
     <RollingFile name="FileAppender" fileName="${log-path}.log"
-      filePattern="${log-path}-${file-pattern}">
+      filePattern="${log-path}-${file-pattern}" immediateFlush="false" append="false">
       <PatternLayout pattern="${log-pattern}"/>
       <Policies>
         <SizeBasedTriggeringPolicy size="15MB"/>
@@ -25,8 +25,8 @@
   </Appenders>
 
   <Loggers>
-    <Logger name="com.example.logging" level="info" additivity="false">
+    <AsyncLogger name="com.example.logging" level="info" additivity="false" includeLocation="true">
       <AppenderRef ref="FileAppender"/>
-    </Logger>
+    </AsyncLogger>
   </Loggers>
 </Configuration>
