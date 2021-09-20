@@ -27,8 +27,7 @@
 
   <appender name="file-async" class="ch.qos.logback.classic.AsyncAppender">
     <appender-ref ref="info-logger"/>
-    <queueSize>4096</queueSize>
-    <includeCallerData>false</includeCallerData>
+    <includeCallerData>true</includeCallerData>
   </appender>
 
   <logger name="com.example.logging" level="INFO" additivity="false">
