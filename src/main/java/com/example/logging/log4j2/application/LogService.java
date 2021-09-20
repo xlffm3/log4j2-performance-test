@@ -10,8 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 public class LogService {
 
     public void log() {
-        log.info("info log");
-        log.warn("warn log");
-        log.error("error log");
+        for (int i = 0; i < 10_000; i++) {
+            log.info("info log");
+        }
     }
 }
