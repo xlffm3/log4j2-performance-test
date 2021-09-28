@@ -22,11 +22,15 @@
         </Delete>
       </DefaultRolloverStrategy>
     </RollingFile>
+
+    <Async name="asyncAppender" includeLocation="true">
+      <AppenderRef ref="FileAppender"/>
+    </Async>
   </Appenders>
 
   <Loggers>
-    <AsyncLogger name="com.example.logging" level="info" additivity="false" includeLocation="true">
-      <AppenderRef ref="FileAppender"/>
-    </AsyncLogger>
+    <Logger name="com.example.logging" level="info" additivity="false">
+      <AppenderRef ref="asyncAppender"/>
+    </Logger>
   </Loggers>
 </Configuration>
